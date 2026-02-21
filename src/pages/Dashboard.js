@@ -53,8 +53,6 @@ export default function Dashboard() {
 
       let totalReviews = 0; let reviews = [];
       try {
-              let totalReviews = 0; let reviews = [];
-      try {
         const s = await getDocs(query(collection(db, 'reviews'), orderBy('createdAt', 'desc'), limit(1000)));
         totalReviews = s.size;
         reviews = s.docs.map(d => ({ ...d.data(), createdAt: d.data().createdAt?.toDate?.() || new Date() }));
@@ -70,22 +68,6 @@ export default function Dashboard() {
       let appOpens = [];
       try {
         const s = await getDocs(query(collection(db, 'appOpens'), orderBy('createdAt', 'desc'), limit(1000)));
-        appOpens = s.docs.map(d => ({ ...d.data(), createdAt: d.data().createdAt?.toDate?.() || new Date() }));
-      } catch (e) {}
-        totalReviews = s.size;
-        reviews = s.docs.map(d => ({ ...d.data(), createdAt: d.data().createdAt?.toDate?.() || new Date() }));
-      } catch (e) {}
-
-      let totalVisits = 0; let visits = [];
-      try {
-        const s = await getDocs(collection(db, 'visits'));
-        totalVisits = s.size;
-        visits = s.docs.map(d => ({ ...d.data(), createdAt: d.data().createdAt?.toDate?.() || new Date() }));
-      } catch (e) {}
-
-      let appOpens = [];
-      try {
-        const s = await getDocs(collection(db, 'appOpens'));
         appOpens = s.docs.map(d => ({ ...d.data(), createdAt: d.data().createdAt?.toDate?.() || new Date() }));
       } catch (e) {}
 

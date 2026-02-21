@@ -308,7 +308,7 @@ export default function OwnerSponsorManage() {
       )}
 
             {/* 스폰서 만료 안내 */}
-      {isExpired && (
+      {settings.isExpired && (
         <Alert severity="error" sx={{ mb: 3, borderRadius: 2 }}>
           <strong>스폰서 기간이 만료되었습니다.</strong> 아래에서 노출 레벨을 다시 결제하면 즉시 재활성화됩니다.
         </Alert>
