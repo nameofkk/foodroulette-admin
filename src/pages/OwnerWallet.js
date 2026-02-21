@@ -6,11 +6,11 @@ import {
   Snackbar, CircularProgress, Grid
 } from '@mui/material';
 import {
-  AccountBalanceWallet, Payment, History, Store, Search, TrendingUp, CardGiftcard, Star
+  AccountBalanceWallet, Payment, History, Store, TrendingUp, CardGiftcard, Star
 } from '@mui/icons-material';
 import { db, auth } from '../firebase';
 import {
-  doc, getDoc, setDoc, updateDoc, increment,
+  doc, getDoc, setDoc,
   collection, getDocs, addDoc, query, where, orderBy,
   onSnapshot, serverTimestamp
 } from 'firebase/firestore';

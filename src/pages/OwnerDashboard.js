@@ -43,12 +43,14 @@ export default function OwnerDashboard({ role }) {
   });
   const [endDate, setEndDate] = useState(() => new Date().toISOString().split('T')[0]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { loadMyStores(); }, []);
 
   useEffect(() => {
     if (allVisits.length > 0 || allReviews.length > 0) {
       buildChartData(allVisits, allReviews);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, endDate]);
 
   const loadMyStores = async () => {

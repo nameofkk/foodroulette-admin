@@ -60,7 +60,7 @@ const adminMenuItems = [
   { text: '포인트 상품', icon: <CardGiftcardIcon />, path: '/products' },
   { text: '주문 관리', icon: <ShoppingCartIcon />, path: '/orders' },
   { text: '문의 관리', icon: <ChatIcon />, path: '/inquiries' },
-  { text: '충전 관리', icon: <ShoppingCartIcon />, path: '/charges' },
+  { text: '충전 관리', icon: <AccountBalanceWalletIcon />, path: '/charges' },
 ];
 
 const ownerMenuItems = [
@@ -267,10 +267,13 @@ export default function App() {
 
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', gap: 2 }}>
-        <CircularProgress sx={{ color: '#FF6B6B' }} />
-        <Typography>로딩 중...</Typography>
-      </Box>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column', gap: 2 }}>
+          <CircularProgress sx={{ color: '#FF6B6B' }} />
+          <Typography>로딩 중...</Typography>
+        </Box>
+      </ThemeProvider>
     );
   }
 

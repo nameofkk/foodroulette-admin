@@ -22,6 +22,7 @@ export default function Dashboard() {
     todayVisits: 0, todayReviews: 0, pendingApplications: 0, todayAppOpens: 0
   });
   const [weeklyData, setWeeklyData] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const [allVisits, setAllVisits] = useState([]);
   const [allReviews, setAllReviews] = useState([]);
@@ -32,12 +33,14 @@ export default function Dashboard() {
   });
   const [endDate, setEndDate] = useState(() => new Date().toISOString().split('T')[0]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { loadDashboardData(); }, []);
 
   useEffect(() => {
     if (allVisits.length > 0 || allReviews.length > 0 || allAppOpens.length > 0) {
       buildWeeklyData(allVisits, allReviews, allAppOpens);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, endDate]);
 
   const loadDashboardData = async () => {

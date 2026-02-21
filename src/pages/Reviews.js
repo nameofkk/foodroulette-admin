@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import {
   Refresh, Search, Delete, Edit, Visibility, Flag,
-  RateReview, Star, CheckCircle, Cancel
+  RateReview, Star, Cancel
 } from '@mui/icons-material';
 import { db } from '../firebase';
 import {
@@ -79,9 +79,6 @@ export default function Reviews() {
     return reports.filter(r => r.reviewId === reviewId);
   };
 
-  const isReported = (reviewId) => {
-    return reports.some(r => r.reviewId === reviewId && r.status === 'pending');
-  };
 
   const handleEdit = (review) => {
     setSelectedReview(review);

@@ -9,13 +9,13 @@ import {
 } from '@mui/material';
 import {
   CheckCircle, Cancel, LocalShipping, Refresh,
-  Edit, Visibility, ShoppingCart, Pending, Done,
+  Edit, Pending, Done,
   ErrorOutline
 } from '@mui/icons-material';
 import { db } from '../firebase';
 import {
   collection, getDocs, getDoc, doc, updateDoc, query,
-  orderBy, serverTimestamp, where, increment, addDoc
+  orderBy, serverTimestamp, increment, addDoc
 } from 'firebase/firestore';
 
 export default function Orders() {

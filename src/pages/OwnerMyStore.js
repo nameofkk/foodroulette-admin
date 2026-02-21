@@ -3,7 +3,7 @@ import {
   Box, Typography, Card, CardContent, Button, Dialog, DialogTitle,
   DialogContent, DialogActions, TextField, Snackbar, Alert, Chip,
   CircularProgress, Grid, List, ListItemButton, ListItemText,
-  Checkbox, FormControlLabel, Divider, Stepper, Step, StepLabel
+  Checkbox, FormControlLabel, Stepper, Step, StepLabel
 } from '@mui/material';
 import {
   Store, Search, Campaign, Edit, Phone, LocationOn, Delete,
@@ -204,7 +204,6 @@ export default function OwnerMyStore({ role }) {
     return <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}><CircularProgress sx={{ color: '#FF6B6B' }} /></Box>;
   }
 
-  const hasSponsorStore = myStores.some(s => s.sponsorStatus === 'approved');
   const hasNonSponsorStore = myStores.some(s => s.sponsorStatus !== 'approved' && s.sponsorStatus !== 'pending');
 
   return (

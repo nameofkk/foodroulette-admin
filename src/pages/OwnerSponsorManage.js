@@ -63,10 +63,12 @@ export default function OwnerSponsorManage() {
   });
   const [endDate, setEndDate] = useState(() => new Date().toISOString().split('T')[0]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { loadSponsorStores(); loadWallet(); }, []);
 
   useEffect(() => {
     if (selectedStore) loadSponsorData(selectedStore);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startDate, endDate]);
 
   const loadWallet = async () => {

@@ -27,6 +27,7 @@ export default function OwnerBonus({ storeId: propStoreId, ownerId }) {
   const [settingsChanged, setSettingsChanged] = useState(false);
   const unsubscribeRef = useRef(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
   loadAllStores();
   loadWallet();
